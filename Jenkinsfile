@@ -25,14 +25,9 @@ pipeline {
                 sh 'docker push venkat5658/nginx:$BUILD_NUMBER'
             }
         }
-        stage('pull image') {
+        stage('run image') {
             steps{
-                sh 'docker pull venkat5658/nginx:latest'
-            }
-       }
-       stage('run image') {
-            steps{
-                sh 'docker run -d --name nginx -p 8081:80 venkat5658/nginx'
+                sh 'docker run -d --name nginx -p 8081:80 venkat5658/nginx:50'
             }
        }
 }          
