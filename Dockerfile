@@ -1,8 +1,8 @@
-FROM ubuntu
-WORKDIR /usr/scripts/build-project
-COPY package*.json ./  /usr/scripts/build-project
+FROM nginx
+WORKDIR /usr/share/nginx/html/
+COPY build-project/* /
 EXPOSE 8080
-CMD [ "node" ]
+CMD [ "nginx" ]
 
 
 
