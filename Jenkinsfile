@@ -30,7 +30,7 @@ pipeline {
                 sh 'docker run -name venkat5658/nginx-d -p 8081'
             }
        }   
- post {
+post {
      always {
        sh 'docker logout'
             }
