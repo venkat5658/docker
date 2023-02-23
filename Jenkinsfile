@@ -27,7 +27,7 @@ pipeline {
         }
        stage('run image') {
             steps{
-                sh 'docker run -d --name nginx -p 8081:80 nginx'
+                sh 'docker run -d --name nginx -p 8081:80 nginx-1'
             }
        }
 }          
