@@ -1,9 +1,6 @@
-FROM nginx
-WORKDIR /usr/share/nginx/html/
-COPY build-project/* /
-EXPOSE 8080
-CMD [ "nginx" ]
-
-
-
-
+FROM node:latest
+WORKDIR /usr/src/app
+COPY nodeapp/* /
+RUN npm install
+EXPOSE 3000
+CMD [ "npm","start" ]
