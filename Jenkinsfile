@@ -27,7 +27,7 @@ pipeline {
         }
         stage('pull image') {
             steps{
-                sh 'docker pull venkat5658/nginx:tagname'
+                sh 'docker pull venkat5658/nginx'
             }
        }
        stage('run image') {
