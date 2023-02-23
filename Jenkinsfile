@@ -27,7 +27,7 @@ pipeline {
         }
        stage('run image') {
             steps{
-                sh 'docker run -name venkat5658/nginx-d -p 8081'
+                sh 'docker run -d --name venkat5658/nginx -p 8081:80 nginx:latest'
             }
        }
 }          
