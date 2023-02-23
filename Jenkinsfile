@@ -1,10 +1,10 @@
 pipeline {
     agent any 
     environment {
-    DOCKERHUB_CREDENTIALS = credentials('venkat5658')
+    DOCKERHUB_CREDENTIALS = credentials('venkat5658')     
     }
+    
     stage("Git Clone"){
-
         git 'https://github.com/venkat5658/docker.git'
     }
 
