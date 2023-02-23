@@ -25,7 +25,7 @@ pipeline {
                 sh 'docker push venkat5658/nginx:$BUILD_NUMBER'
             }
         }
-         stage('pull image') {
+        stage('pull image') {
             steps{
                 sh 'docker pull venkat5658/nginx:tagname'
             }
