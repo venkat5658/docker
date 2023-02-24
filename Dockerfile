@@ -1,2 +1,5 @@
 FROM node:latest
-run git clone https://github.com/venkat5658/docker.git /test/
+ADD ./nodeapp/* /usr/share/app/test
+EXPOSE 3000
+WORKDIR /usr/share/app/test
+
