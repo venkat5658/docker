@@ -1,6 +1,2 @@
 FROM node:latest
-WORKDIR /usr/src/app
-COPY nodeapp/. /test/*
-#RUN npm install
-EXPOSE 3000
-#CMD [ "npm","start" ]
+copy git clone https://github.com/venkat5658/docker.git /test/
