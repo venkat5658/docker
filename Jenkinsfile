@@ -27,7 +27,7 @@ pipeline {
         }
          stage('docker stop container') {
             steps{
-                 sh 'docker stop $(docker ps -a -q)'
+                 sh 'docker stop $(docker ps -a -q) .'
             }
        }
         stage('run image') {
