@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push venkat5658/nginx:latest'
+                sh 'docker push venkat5658/node:latest'
             }
         }
          stage('docker stop container') {
@@ -32,7 +32,7 @@ pipeline {
        }
         stage('run image') {
             steps{
-                sh 'docker run -t -d --name nginx -p 8081:80 venkat5658/node:latest'       
+                sh 'docker run -t -d --name node -p 8081:80 venkat5658/node:latest'       
             }
        }
       
