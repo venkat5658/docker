@@ -12,7 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t venkat5658/nginx:latest .'
+                sh 'docker build -t venkat5658/node:latest .'
             }
         }
         stage('login to dockerhub') {
@@ -27,7 +27,7 @@ pipeline {
         }
         stage('run image') {
             steps{
-                sh 'docker run -t -d --name nginx -p 8081:80 venkat5658/nginx:latest'
+                sh 'docker run -t -d --name nginx -p 8081:80 venkat5658/node:latest'
         
             }
        }
