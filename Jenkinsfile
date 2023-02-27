@@ -25,11 +25,11 @@ pipeline {
                 sh 'docker push venkat5658/node:latest'
             }
         }
-         stage('docker stop container') {
-            steps{
-                 sh 'sudo docker stop $(docker ps -a -q)'
-            }
-       }
+         stage('stop container') {
+            steps{
+                sh 'sudo docker rm $(sudo docker stop $(sudo docker ps -a | grep "venkat5658/nodeapp" | cut -d " " -f 1))'
+            }
+        }
         stage('run image') {
             steps{
                 sh 'sudo docker run -t -d --name node -p 8081:80 venkat5658/node:latest'       
