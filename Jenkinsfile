@@ -11,7 +11,7 @@ pipeline {
         }
         stage('stop container') {
             steps{
-                sh 'sudo docker rm $(sudo docker stop $(sudo docker ps -a | grep "venkat5658/node:latest" | cut -d " " -f 1))'
+                sh 'sudo docker rm $(sudo docker stop $(sudo docker ps -a | grep "venkat5658/node" | cut -d " " -f 1))'
              }
         }        
         stage('Build docker image') {
