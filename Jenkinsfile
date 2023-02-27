@@ -32,7 +32,7 @@ pipeline {
          
         stage('run image') {
             steps{
-                sh 'sudo docker run -t -d --name node -p 8081:80 venkat5658/node:latest'       
+                sh 'sudo docker run  -dp  8082:80 venkat5658/node:latest'       
             }
        }
       
