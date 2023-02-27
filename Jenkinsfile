@@ -27,12 +27,12 @@ pipeline {
         }
          stage('docker stop container') {
             steps{
-                 sh 'docker stop $(docker ps -a -q) .'
+                 sh 'docker stop $(docker ps -a -q)'
             }
        }
         stage('run image') {
             steps{
-                sh 'docker run -t -d --name node -p 8081:80 venkat5658/node:latest'       
+                sh 'sudo docker run -t -d --name node -p 8081:80 venkat5658/node:latest'       
             }
        }
       
