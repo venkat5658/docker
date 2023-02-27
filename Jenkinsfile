@@ -9,6 +9,11 @@ pipeline {
             git 'https://github.com/venkat5658/docker.git'
             }
         }
+        stage('stop container') {
+            steps{
+                sh 'docker rm $(sudo docker stop $(sudo docker ps -a | grep "venkat5658/node" | cut -d " " -f 1))'
+             }
+        }        
         
         stage('Build docker image') {
             steps {  
@@ -28,7 +33,7 @@ pipeline {
          
         stage('run image') {
             steps{
-                sh 'docker run  -dp  8082:80 venkat5658/node:latest'       
+                sh 'docker run  -d -t --name node -p 8082:80 venkat5658/node:latest'       
             }
        }
       
